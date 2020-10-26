@@ -1,8 +1,20 @@
 @startuml
 
-:患者:
-:受付係:
+:患者: as patient
+:受付係: as receptionist
+:医者: as doctor
+:看護師: as nurse
 
+rectangle 予約システム {
+  usecase 希望日時入力 as date
+  usecase 診察部位選択 as selection
+  usecase 予約確認 as booking
+}
 
+patient -up-> date
+patient -up-> selection
+receptionist -up-> booking
+doctor -up-> booking
+nurse -up-> booking
 
 @enduml
