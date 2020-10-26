@@ -12,5 +12,5 @@ start
 :予約を確認する;
 |患者|
 :予約を確認する;
-end
+stop
 @enduml
