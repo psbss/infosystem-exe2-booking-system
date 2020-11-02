@@ -1,0 +1,14 @@
+@startuml flowchart
+skinparam conditionStyle diamond
+
+:開始;
+:顧客配列の発生;
+:乱数で親の配列を生成;
+:親をシュミレータで評価;
+repeat
+  :子の生成;
+  :シュミレータで評価;
+repeat while (<b>n<100)
+:患者の順番を表示;
+
+@enduml
