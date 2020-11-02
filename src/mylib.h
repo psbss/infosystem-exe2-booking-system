@@ -7,6 +7,6 @@
 #include <unistd.h>
 #include <math.h>
 
-int main();
+int ga(void);
 
 #endif
