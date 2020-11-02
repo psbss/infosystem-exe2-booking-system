@@ -1,2 +1,6 @@
-#include "mylib.h";
+#include "mylib.h"
 
+int ga()
+{
+
+}
