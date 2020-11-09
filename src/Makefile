@@ -1,5 +1,5 @@
 SRCS = \
-	genetic_algorithm.c
+	inquiry.c \
 
 OBJS = $(SRCS:%.c=%.o)
 INCS = ./

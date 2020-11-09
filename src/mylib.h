@@ -7,6 +7,6 @@
 #include <unistd.h>
 #include <math.h>
 
-int ga(void);
+int inquiry(void);
 
 #endif
