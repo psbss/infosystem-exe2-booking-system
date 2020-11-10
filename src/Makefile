@@ -26,7 +26,7 @@ clean:
 	rm -f $(OBJS)
 
 fclean:	clean
-	rm -f $(LIB_NAME)
+	rm -f $(LIB_NAME) ${EXE_NAME}
 
 re: fclean all
 
