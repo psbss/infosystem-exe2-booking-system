@@ -1,4 +1,4 @@
-#ifdef MYLIB_H
+#ifndef MYLIB_H
 #define MYLIB_H
 
 #include <stdio.h>
@@ -7,6 +7,6 @@
 #include <unistd.h>
 #include <math.h>
 
-int ga(void);
+int inquiry(void);
 
 #endif

@@ -1,28 +1,33 @@
 SRCS = \
-	genetic_algorithm.c
+	inquiry.c \
 
 OBJS = $(SRCS:%.c=%.o)
-INCS = ./
-NAME = mylib.a
+INCS = mylib.h
+MAIN = main.c
+LIB_NAME = MYLIB
+EXE_NAME = ExeBooking
+CC = gcc
 AR = ar rcs
-CC= gcc
 FLAGS = -Wall -Wextra -Werror
 RM = rm
 
 .c.o:
-	$(CC) $(FLAGS) -c $< -o $@  -I $(INCS)
+	$(CC) $(FLAGS) -c $< -o $@ -I ${INCS}
 
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+$(LIB_NAME): $(OBJS)
+	$(AR) $(LIB_NAME) $(OBJS)
 
-all: $(NAME)
+all: $(LIB_NAME)
+
+link: all
+	${CC} ${MAIN} ${LIB_NAME} -o ${EXE_NAME}
 
 clean:
 	rm -f $(OBJS)
 
 fclean:	clean
-	rm -f $(NAME)
+	rm -f $(LIB_NAME) ${EXE_NAME}
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: link all clean fclean re
