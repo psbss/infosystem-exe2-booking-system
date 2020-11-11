@@ -50,8 +50,12 @@ int	validate_int(int input_range_beginning, int input_range_end, int input)
 
 int	validate_date(int range_end, int input)
 {
+	time_t current_time = time(NULL);
+	printf("%ld, %d, %d", current_time, range_end, input);
+	if (current_time + 10080 <= )
 	// 現在の日付を元にバリデーションを行う
 	// 休館判定は未考慮
+	return (0);
 }
 
 void	print_validation_err(int input)
