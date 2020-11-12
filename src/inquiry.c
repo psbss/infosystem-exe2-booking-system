@@ -10,7 +10,7 @@ int	inquiry(void)
 	// !! Must Validate !!
 	while (1)
 	{
-		printf("\n診察部位\n頭 : 1\n手足 : 2\n胸部, 腹部 : 3\n予防接種 : 4\n予約キャンセル : 5\n");
+		printf("\n診察予定部位を入力してください\n頭 : 1\n手足 : 2\n胸部, 腹部 : 3\n予防接種 : 4\n予約キャンセル : 5\n");
 		scanf("%d", &issue_part);
 		// Validate int 1-5
 		if (validate_int(1, 5, issue_part))
@@ -20,7 +20,7 @@ int	inquiry(void)
 
 	while (1)
 	{
-		printf("\n診察希望日時(YYYYMMDD)\n例 : 2020年12月31日 -> 20201231\n");
+		printf("\n診察希望日時(YYYYMMDD)を入力してください\n例 : 2020年12月31日 -> 20201231\n");
 		scanf("%d", &date);
 		// Validate int today-1week
 		if (validate_date(7, date))
@@ -30,7 +30,7 @@ int	inquiry(void)
 
 	while (1)
 	{
-		printf("\n午前 : 1\n午後 : 2\n");
+		printf("\n希望の時間帯を入力してください\n午前 : 1\n午後 : 2\n");
 		scanf("%d", &ampm);
 		// Validate int 1-2
 		if (validate_int(1, 2, ampm))
