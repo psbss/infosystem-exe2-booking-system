@@ -20,7 +20,7 @@ int	inquiry(void)
 
 	while (1)
 	{
-		printf("\n診察希望日時(YYYYMMDD)を入力してください\n例 : 2020年12月31日 -> 20201231\n");
+		printf("\n診察希望日時(YYYYMMDD)を入力してください\nなお、翌日以降1週間での受付となります\n例 : 2020年12月31日 -> 20201231\n");
 		scanf("%d", &date);
 		// Validate int today-1week
 		if (validate_date(7, date))
@@ -55,7 +55,7 @@ int	validate_date(int range_end, int input)
 	struct tm tm;
 	localtime_r(&current_time, &tm);
 	int current_time_int = (tm.tm_year + 1900) * 10000 + (tm.tm_mon + 1) * 100 + (tm.tm_mday);
-	if (input <= current_time_int + range_end)
+	if (current_time_int < input && input <= current_time_int + range_end)
 		return (1);
 	return (0);
 	// 休館判定は未考慮
