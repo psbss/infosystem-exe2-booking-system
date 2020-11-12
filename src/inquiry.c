@@ -48,14 +48,17 @@ int	validate_int(int input_range_beginning, int input_range_end, int input)
 	return (0); // false
 }
 
+// 現在の日付を元にバリデーションを行う
 int	validate_date(int range_end, int input)
 {
 	time_t current_time = time(NULL);
-	printf("%ld, %d, %d", current_time, range_end, input);
-	if (current_time + 10080 <= )
-	// 現在の日付を元にバリデーションを行う
-	// 休館判定は未考慮
+	struct tm tm;
+	localtime_r(&current_time, &tm);
+	int current_time_int = (tm.tm_year + 1900) * 10000 + (tm.tm_mon + 1) * 100 + (tm.tm_mday);
+	if (input <= current_time_int + range_end)
+		return (1);
 	return (0);
+	// 休館判定は未考慮
 }
 
 void	print_validation_err(int input)
