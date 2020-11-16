@@ -1,7 +1,8 @@
 {
   "plantuml.diagramsRoot": "uml/src",
   "plantuml.exportOutDir": "uml/dist",
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.insertSpaces": false,
   "editor.useTabStops": true,
+  "files.insertFinalNewline": true,
 }
