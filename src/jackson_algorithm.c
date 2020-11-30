@@ -1,12 +1,5 @@
 #include "mylib.h"
 
-int jackson()
-{
-
-}
-
-#include "mylib.h"
-
 struct BODY
 {
 	int time1; //M1
@@ -19,7 +12,7 @@ struct CUSTOMER
 };
 
 
-int main(void) {
+int jackson(void){
 
 	struct BODY body[4];
 	struct COSTOMER costomer[11], johnson[11],change; //chageはjohnsonの値を保存
