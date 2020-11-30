@@ -13,7 +13,7 @@ struct BODY
 	int time2; //M2
 };
 
-struct COSTOMER
+struct CUSTOMER
 {
 	int no; //患部
 };
