@@ -10,6 +10,8 @@ int	random_inquiry(void){
 	localtime_r(&current_time, &Time);
 	int current_time_int = (Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday);
 
+	// get_rand(rand_start, rand_end)
+	// rand_start < rand_end
 	issue_part = get_rand(1.0, 5.0);
 	date = current_time_int + get_rand(1.0, 7.0);
 	ampm = get_rand(1.0, 2.0);
@@ -18,6 +20,9 @@ int	random_inquiry(void){
 }
 
 int	get_rand(double rand_start, double rand_end){
+	// rand() % max を利用した方法は乱数として数値の余りを利用しているため偏りが発生する。
+	// get_rand を利用することで、擬似乱数として本質的に乱数に近い数値を返すことが可能である。
+
 	time_t current_time = time(NULL);
 	// init random
 	srand((unsigned int)current_time);
