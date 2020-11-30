@@ -1,6 +1,6 @@
 #include "mylib.h"
 
-int ga()
+int jackson()
 {
 
 }
