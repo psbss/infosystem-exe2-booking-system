@@ -12,7 +12,7 @@ struct CUSTOMER
 };
 
 
-int jackson(void){
+int johnson(void){
 
 	struct BODY body[4];
 	struct COSTOMER costomer[11], johnson[11], change; //chageはjohnsonの値を保存
