@@ -12,5 +12,6 @@ int inquiry(void);
 int validate_int(int input_range_beginning, int input_range_end, int input);
 int validate_date(int range_end, int input);
 void print_validation_err(int input);
+int johnson(void);
 
 #endif
