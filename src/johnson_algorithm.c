@@ -15,7 +15,7 @@ struct CUSTOMER
 int jackson(void){
 
 	struct BODY body[4];
-	struct COSTOMER costomer[11], johnson[11],change; //chageはjohnsonの値を保存
+	struct COSTOMER costomer[11], johnson[11], change; //chageはjohnsonの値を保存
 	
 	int min_time; //最小時間
 	int min_costomer;//最小時間の番号
