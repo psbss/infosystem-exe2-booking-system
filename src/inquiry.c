@@ -67,9 +67,6 @@ void	print_validation_err(int input)
 }
 
 int	random_inquiry(int **database){
-	int issue_part;
-	int date;
-	int ampm;
 	time_t current_time = time(NULL);
 
 	struct tm Time;
@@ -78,9 +75,15 @@ int	random_inquiry(int **database){
 
 	// get_rand(rand_start, rand_end)
 	// rand_start < rand_end
-	issue_part = get_rand(current_time, 1.0, 5.0);
-	date = current_time_int + get_rand(current_time, 1.0, 7.0);
-	ampm = get_rand(current_time, 1.0, 2.0);
+	while (**database == 0){
+		*database[1] = get_rand(current_time, 1.0, 5.0);
+		// issue_part : 診察希望部位
+		*database[2] = current_time_int + get_rand(current_time, 1.0, 7.0);
+		// date : 希望時間
+		*database[3] = get_rand(current_time, 1.0, 2.0);
+		// ampm : 希望時間帯
+		database++;
+	}
 
 	return (0);
 }
