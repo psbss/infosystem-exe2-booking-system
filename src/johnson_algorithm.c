@@ -1,4 +1,4 @@
-int johnson(int* no, int* time1, int* time2) {
+int johnson(int* no, int* time1, int* time2, int* sumtime) {
 
 	//ポインタで渡されたno配列のコピー
 	int johnson[11];
@@ -8,7 +8,8 @@ int johnson(int* no, int* time1, int* time2) {
 	int min_costomer;
 	//1から11人の患者（配列の先頭と末尾）
 	int n, m;
-
+	//M1とM2の合計時間
+	int sumtime1, sumtime2;
 	int i, change;
 
 	//johnson配列にno配列の値をコピー
@@ -53,6 +54,26 @@ int johnson(int* no, int* time1, int* time2) {
 			m--;
 		}
 	}
+
+	//合計時間（ガントチャート）
+	sumtime1 = 0;
+
+	for (i = 0; i < 11; i++) {
+		sumtime1 += time1[johnson[i]];
+
+		if (i == 0) {
+			sumtime2 = sumtime1 + time2[johnson[i]];
+		}
+		//else if
+		if (i > 0 && sumtime1 > sumtime2) {
+			sumtime2 += time2[johnson[i]] + (sumtime1 - sumtime2);
+		}
+		//else
+		if (i > 0 && sumtime1 <= sumtime2) {
+			sumtime2 += time2[johnson[i]];
+		}
+	}
+	*sumtime = sumtime2;
 
 	//戻り値はjohnson配列になる
 	return *johnson;
