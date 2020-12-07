@@ -66,7 +66,7 @@ void	print_validation_err(int input)
 	printf("\n%d は対象外の数値です。再度入力してください。\n", input);
 }
 
-int	random_inquiry(void){
+int	random_inquiry(int **database){
 	int issue_part;
 	int date;
 	int ampm;
