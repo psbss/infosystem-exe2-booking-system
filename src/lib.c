@@ -15,3 +15,11 @@ int** database_init(int **database){
 		memset(*database, 0, 6);
 	return (database);
 }
+
+// database : 
+//  - 患者No
+//  - issue_part
+//  - date
+//  - ampm
+//  - 診察時間
+//  - 施術時間
