@@ -1,6 +1,6 @@
 SRCS = \
+	lib.c \
 	inquiry.c \
-	inquiry_random.c \
 
 OBJS = $(SRCS:%.c=%.o)
 INCS = mylib.h

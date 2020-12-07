@@ -15,4 +15,7 @@ void print_validation_err(int input);
 int random_inquiry(int **database);
 int get_rand(time_t current_time, double rand_start, double rand_end);
 
+// lib
+int **database_init(int **database);
+
 #endif
