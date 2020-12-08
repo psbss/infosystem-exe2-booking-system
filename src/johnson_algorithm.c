@@ -1,7 +1,6 @@
-int johnson(int* no, int* time1, int* time2, int* sumtime) {
+//ポインタで渡される(患者番号{0,1,2,～,10}、診察時間、johnson用の並び替え、施術時間)
+void johnson(int* no, int* time1, int* time2,int* johnson, int* sumtime) {
 
-	//ポインタで渡されたno配列のコピー
-	int johnson[11];
 	//最小時間
 	int min_time;
 	//最小時間の番号
@@ -17,7 +16,6 @@ int johnson(int* no, int* time1, int* time2, int* sumtime) {
 		johnson[i] = no[i];
 	}
 
-
 	//ジョンソン法
 	n = 0;
 	m = 10;
@@ -28,20 +26,36 @@ int johnson(int* no, int* time1, int* time2, int* sumtime) {
 
 		for (i = n; i <= m; i++) {
 			if (time1[johnson[i]] <= time2[johnson[i]]) {
-				if ((time1[johnson[i]] == min_time && time2[johnson[i]] < time2[johnson[abs(min_costomer) - 1]]) || time1[johnson[i]] < min_time) {
+				if (time1[johnson[i]] < min_time) {
 					min_time = time1[johnson[i]];
 					min_costomer = i + 1;
 				}
+				else if (time1[johnson[i]] == min_time) {
+					if (min_costomer > 0 && time2[johnson[i]] < time2[johnson[abs(min_costomer) - 1]]) {
+						min_time = time1[johnson[i]];
+						min_costomer = i + 1;
+					}
+					if (min_costomer < 0) {
+						min_time = time1[johnson[i]];
+						min_costomer = i + 1;
+					}
+				}
+
 			}
-			//else
-			if (time1[johnson[i]] > time2[johnson[i]]) {
-				if ((time1[johnson[i]] == min_time && time1[johnson[i]] > time1[johnson[abs(min_costomer) - 1]]) || time2[johnson[i]] < min_time) {
+			else {
+				if (time2[johnson[i]] < min_time) {
 					min_time = time2[johnson[i]];
 					min_costomer = -(i + 1);
 				}
+				else if (time2[johnson[i]] == min_time) {
+					if (min_costomer < 0 && time1[johnson[i]] > time1[johnson[abs(min_costomer) - 1]]) {
+						min_time = time2[johnson[i]];
+						min_costomer = -(i + 1);
+					}
+				}
 			}
 		}
-		if (min_time > 0) {
+		if (min_costomer > 0) {
 			change = johnson[n];
 			johnson[n] = johnson[abs(min_costomer) - 1];
 			johnson[abs(min_costomer) - 1] = change;
@@ -74,7 +88,4 @@ int johnson(int* no, int* time1, int* time2, int* sumtime) {
 		}
 	}
 	*sumtime = sumtime2;
-
-	//戻り値はjohnson配列になる
-	return *johnson;
 }
