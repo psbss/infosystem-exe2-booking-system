@@ -8,6 +8,10 @@
 #include <math.h>
 #include <time.h>
 
+// Define
+#define DATABASE_TYPE 6	   // database で格納するデータの種類
+#define DATABASE_NUMBER 32 // database で格納するデータの件数
+
 int inquiry(void);
 int validate_int(int input_range_beginning, int input_range_end, int input);
 int validate_date(int range_end, int input);
@@ -16,6 +20,6 @@ int random_inquiry(int **database);
 int get_rand(time_t current_time, double rand_start, double rand_end);
 
 // lib
-int **database_init(int **database);
+// int **database_init(int **database);
 
 #endif
