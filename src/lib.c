@@ -1,21 +1,20 @@
 #include "mylib.h"
 
-// int **database_init(int **database){
-// 	if (!(database = (int **)malloc(sizeof(int *) * 6)))
-// 		return (NULL);
-// 	printf("hi\n");
-// 	int countroop = 0;
-// 	while (1)
-// 	{
-// 		if (!(database[countroop] = (int *)malloc(sizeof(int *) * 32)))
-// 			return (NULL);
-// 		if (++countroop > 32)
-// 			break;
-// 	}
-// 	while (--countroop > 0)
-// 		memset(*database, 0, 6);
-// 	return (database);
-// }
+void database_init(int db_type, int db_no, int database[db_type][db_no]){
+	int ct_type = 0;
+	int ct_no = 0;
+
+	while (ct_type <= db_type)
+	{
+		ct_no = 0;
+		while (ct_no <= db_no)
+		{
+			database[ct_type][ct_no] = 0;
+			ct_no++;
+		}
+		ct_type++;
+	}
+}
 
 // database : 
 //  - 患者No
