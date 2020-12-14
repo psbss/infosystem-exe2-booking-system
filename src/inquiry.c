@@ -68,21 +68,30 @@ void	print_validation_err(int input)
 
 int	random_inquiry(int db_type, int db_no, int database[db_type][db_no]){
 	time_t current_time = time(NULL);
-
 	struct tm Time;
 	localtime_r(&current_time, &Time);
+
 	int current_time_int = (Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday);
+	int ct_type = 0;
+	int ct_no = 0;
 
 	// get_rand(rand_start, rand_end)
 	// rand_start < rand_end
-	while (**database == 0){
-		*database[1] = get_rand(current_time, 1.0, 5.0);
-		// issue_part : 診察希望部位
-		*database[2] = current_time_int + get_rand(current_time, 1.0, 7.0);
-		// date : 希望時間
-		*database[3] = get_rand(current_time, 1.0, 2.0);
-		// ampm : 希望時間帯
-		database++;
+	while (ct_type <= db_type)
+	{
+		printf("hi");
+		ct_no = 0;
+		while (ct_no <= db_no)
+		{
+			database[1][ct_no] = get_rand(current_time, 1.0, 5.0);
+			// issue_part : 診察希望部位
+			database[2][ct_no] = current_time_int + get_rand(current_time, 1.0, 7.0);
+			// date : 希望時間
+			database[3][ct_no] = get_rand(current_time, 1.0, 2.0);
+			// ampm : 希望時間帯
+			ct_no++;
+		}
+		ct_type++;
 	}
 
 	return (0);
