@@ -66,7 +66,7 @@ void	print_validation_err(int input)
 	printf("\n%d は対象外の数値です。再度入力してください。\n", input);
 }
 
-int	random_inquiry(int db_type, int db_no, int database[db_type][db_no]){
+void	random_inquiry(int db_type, int db_no, int database[db_type][db_no]){
 	time_t current_time = time(NULL);
 	struct tm Time;
 	localtime_r(&current_time, &Time);
@@ -79,7 +79,6 @@ int	random_inquiry(int db_type, int db_no, int database[db_type][db_no]){
 	// rand_start < rand_end
 	while (ct_type <= db_type)
 	{
-		printf("hi");
 		ct_no = 0;
 		while (ct_no <= db_no)
 		{
@@ -93,8 +92,6 @@ int	random_inquiry(int db_type, int db_no, int database[db_type][db_no]){
 		}
 		ct_type++;
 	}
-
-	return (0);
 }
 
 int	get_rand(time_t current_time, double rand_start, double rand_end){
