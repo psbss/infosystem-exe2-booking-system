@@ -1,4 +1,4 @@
-//ポインタで渡される(患者番号{0,1,2,～,10}、診察時間、johnson用の並び替え、施術時間)
+//ポインタで渡される(患者番号{0,1,2,～,10}、診察時間、施術時間、並び替え用の配列、合計時間保存用の変数)
 void johnson(int* no, int* time1, int* time2,int* johnson, int* sumtime) {
 
 	//最小時間
@@ -88,4 +88,5 @@ void johnson(int* no, int* time1, int* time2,int* johnson, int* sumtime) {
 		}
 	}
 	*sumtime = sumtime2;
+
 }
