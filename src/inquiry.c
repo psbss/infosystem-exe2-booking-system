@@ -66,7 +66,7 @@ void	print_validation_err(int input)
 	printf("\n%d は対象外の数値です。再度入力してください。\n", input);
 }
 
-int	random_inquiry(int **database){
+int	random_inquiry(int db_type, int db_no, int database[db_type][db_no]){
 	time_t current_time = time(NULL);
 
 	struct tm Time;
