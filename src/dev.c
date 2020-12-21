@@ -5,6 +5,7 @@ void database_printf(int db_no, int db_type, int database[db_no][db_type]){
 	int ct_type = 0;
 	int ct_no = 0;
 
+	printf("\n\n");
 	while (ct_no < db_no)
 	{
 		ct_type = 0;
