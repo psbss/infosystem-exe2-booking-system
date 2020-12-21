@@ -14,7 +14,6 @@ int main(int argc, char *argv[]){
 		inquiry();
 		printf("inquiry finished! \n");
 	}
-	printf("\n\n\n");
 	database_printf(DATABASE_NUMBER, DATABASE_TYPE, database);
 	return (0);
 }
