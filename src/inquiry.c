@@ -70,6 +70,7 @@ void	random_inquiry(int db_no, int db_type, int database[db_no][db_type]){
 	time_t current_time = time(NULL);
 	struct tm Time;
 	localtime_r(&current_time, &Time);
+	srand((unsigned int)time(NULL));
 
 	int current_time_int = (Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday);
 	int ct_no = 0;
@@ -79,23 +80,12 @@ void	random_inquiry(int db_no, int db_type, int database[db_no][db_type]){
 	while (ct_no < db_no)
 	{
 		database[ct_no][0] = (ct_no * 10) + ct_no;
-		database[ct_no][1] = get_rand(current_time, 1.0, 5.0);
+		database[ct_no][1] = get_rand(1, 5);
 		// issue_part : 診察希望部位
-		database[ct_no][2] = current_time_int + get_rand(current_time, 1.0, 7.0);
+		database[ct_no][2] = current_time_int + get_rand(1, 7);
 		// date : 希望時間
-		database[ct_no][3] = get_rand(current_time, 1.0, 2.0);
+		database[ct_no][3] = get_rand(1, 2);
 		// ampm : 希望時間帯
 		ct_no++;
 	}
-}
-
-int	get_rand(time_t current_time, double rand_start, double rand_end){
-	// rand() % max を利用した方法は乱数として数値の余りを利用しているため偏りが発生する。
-	// get_rand を利用することで、擬似乱数として本質的に乱数に近い数値を返すことが可能である。
-
-	// init random
-	srand((unsigned int)current_time);
-	// current_time を関数実行時に変更すると乱数生成が失敗するため、呼び出し元から時間を引き継いで初期化している。
-
-	return ((int)rand_start + (int)((rand_end - rand_start + 1.0) * rand() / (RAND_MAX + 1.0)));
 }

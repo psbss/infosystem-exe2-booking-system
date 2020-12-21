@@ -23,3 +23,11 @@ void database_init(int db_no, int db_type, int database[db_no][db_type]){
 		ct_no++;
 	}
 }
+
+int	get_rand(int rand_start, int rand_end){
+	int random = 0;
+
+	random = rand_start + rand() % (rand_end - rand_start + 1);
+
+	return (random);
+}
