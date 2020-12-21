@@ -1,6 +1,7 @@
 SRCS = \
 	inquiry.c \
 	johnson_algorithm.c \
+	inquiry_random.c \
 
 OBJS = $(SRCS:%.c=%.o)
 INCS = mylib.h
