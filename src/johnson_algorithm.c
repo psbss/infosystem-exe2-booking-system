@@ -21,17 +21,17 @@ void johnson(int* no, int* time1, int* time2,int* johnson, int* sumtime) {
 	m = 10;
 	while (m - n > 0) {
 
-		min_time = time1[johnson[n]];
-		min_costomer = n + 1;
+		min_time = 9999;
+		min_costomer = 0;
 
-		for (i = n; i <= m; i++) {
+		for (i = n ; i <= m; i++) {
 			if (time1[johnson[i]] <= time2[johnson[i]]) {
 				if (time1[johnson[i]] < min_time) {
 					min_time = time1[johnson[i]];
 					min_costomer = i + 1;
 				}
 				else if (time1[johnson[i]] == min_time) {
-					if (min_costomer > 0 && time2[johnson[i]] < time2[johnson[abs(min_costomer) - 1]]) {
+					if (min_costomer > 0 && time2[johnson[i]] > time2[johnson[abs(min_costomer) - 1]]) {
 						min_time = time1[johnson[i]];
 						min_costomer = i + 1;
 					}
@@ -40,7 +40,6 @@ void johnson(int* no, int* time1, int* time2,int* johnson, int* sumtime) {
 						min_costomer = i + 1;
 					}
 				}
-
 			}
 			else {
 				if (time2[johnson[i]] < min_time) {
@@ -48,7 +47,7 @@ void johnson(int* no, int* time1, int* time2,int* johnson, int* sumtime) {
 					min_costomer = -(i + 1);
 				}
 				else if (time2[johnson[i]] == min_time) {
-					if (min_costomer < 0 && time1[johnson[i]] > time1[johnson[abs(min_costomer) - 1]]) {
+					if (min_costomer < 0 && time1[johnson[i]] < time1[johnson[abs(min_costomer) - 1]]) {
 						min_time = time2[johnson[i]];
 						min_costomer = -(i + 1);
 					}
@@ -71,7 +70,6 @@ void johnson(int* no, int* time1, int* time2,int* johnson, int* sumtime) {
 
 	//合計時間（ガントチャート）
 	sumtime1 = 0;
-
 	for (i = 0; i < 11; i++) {
 		sumtime1 += time1[johnson[i]];
 
