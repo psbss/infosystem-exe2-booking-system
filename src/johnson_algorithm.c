@@ -76,13 +76,13 @@ void johnson(int database[][6], int start, int count, int* johnson, int* sumtime
 	for (i = 0; i < count; i++) {
 		sumtime1 += database[johnson[i]][4];
 
-		if (i == start) {
+		if (i == 0) {
 			sumtime2 = sumtime1 + database[johnson[i]][5];
 		}
-		if (i > start && sumtime1 > sumtime2) {
+		if (i > 0 && sumtime1 > sumtime2) {
 			sumtime2 += database[johnson[i]][5] + (sumtime1 - sumtime2);
 		}
-		if (i > start && sumtime1 <= sumtime2) {
+		if (i > 0 && sumtime1 <= sumtime2) {
 			sumtime2 += database[johnson[i]][5];
 		}
 	}
