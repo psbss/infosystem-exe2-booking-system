@@ -1,6 +1,6 @@
 #include "mylib.h"
 
-//ポインタで渡される(databaseの配列(0=患者番号、4=施術時間、5=診察時間)、ブロックの開始位置、ブロック内の人数、並び替え用の配列、合計時間保存用の変数)
+//ポインタで渡される(databaseの配列(0=患者番号、4=診察時間、5=施術時間)、ブロックの開始位置、ブロック内の人数、並び替え用の配列、合計時間保存用の変数)
 void johnson(int database[][6], int start, int count, int* johnson, int* sumtime) {
 
 	//最小時間

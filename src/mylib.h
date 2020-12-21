@@ -18,7 +18,9 @@ int validate_date(int range_end, int input);
 void print_validation_err(int input);
 void random_inquiry(int db_type, int db_no, int database[db_type][db_no]);
 int get_rand(int rand_start, int rand_end);
-void johnson(int *no, int *time1, int *time2, int *johnson, int *sumtime);
+
+// johnson
+void johnson(int database[][6], int start, int count, int* johnson, int* sumtime);
 
 // lib
 void database_init(int db_no, int db_type, int database[db_no][db_type]);
