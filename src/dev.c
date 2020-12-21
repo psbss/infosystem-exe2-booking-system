@@ -5,15 +5,15 @@ void database_printf(int db_no, int db_type, int database[db_no][db_type]){
 	int ct_type = 0;
 	int ct_no = 0;
 
-	while (ct_type < db_no)
+	while (ct_no < db_no)
 	{
-		ct_no = 0;
-		while (ct_no < db_type)
+		ct_type = 0;
+		while (ct_type < db_type)
 		{
-			printf("%d ", database[ct_type][ct_no]);
-			ct_no++;
+			printf("%d ", database[ct_no][ct_type]);
+			ct_type++;
 		}
 		putchar('\n');
-		ct_type++;
+		ct_no++;
 	}
 }

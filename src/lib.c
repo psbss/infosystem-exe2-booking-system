@@ -12,14 +12,14 @@ void database_init(int db_no, int db_type, int database[db_no][db_type]){
 	int ct_type = 0;
 	int ct_no = 0;
 
-	while (ct_type < db_no)
+	while (ct_no < db_no)
 	{
-		ct_no = 0;
-		while (ct_no < db_type)
+		ct_type = 0;
+		while (ct_type < db_type)
 		{
-			database[ct_type][ct_no] = 0;
-			ct_no++;
+			database[ct_no][ct_type] = 0;
+			ct_type++;
 		}
-		ct_type++;
+		ct_no++;
 	}
 }

@@ -72,26 +72,20 @@ void	random_inquiry(int db_no, int db_type, int database[db_no][db_type]){
 	localtime_r(&current_time, &Time);
 
 	int current_time_int = (Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday);
-	int ct_type = 0;
 	int ct_no = 0;
 
 	// get_rand(rand_start, rand_end)
 	// rand_start < rand_end
-	while (ct_type < db_no)
+	while (ct_no < db_no)
 	{
-		ct_no = 0;
-		while (ct_no < db_type)
-		{
-			database[ct_no][0] = (ct_type * 10) + ct_no;
-			database[ct_no][1] = get_rand(current_time, 1.0, 5.0);
-			// issue_part : 診察希望部位
-			database[ct_no][2] = current_time_int + get_rand(current_time, 1.0, 7.0);
-			// date : 希望時間
-			database[ct_no][3] = get_rand(current_time, 1.0, 2.0);
-			// ampm : 希望時間帯
-			ct_no++;
-		}
-		ct_type++;
+		database[ct_no][0] = (ct_no * 10) + ct_no;
+		database[ct_no][1] = get_rand(current_time, 1.0, 5.0);
+		// issue_part : 診察希望部位
+		database[ct_no][2] = current_time_int + get_rand(current_time, 1.0, 7.0);
+		// date : 希望時間
+		database[ct_no][3] = get_rand(current_time, 1.0, 2.0);
+		// ampm : 希望時間帯
+		ct_no++;
 	}
 }
 
