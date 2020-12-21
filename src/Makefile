@@ -1,6 +1,7 @@
 SRCS = \
 	lib.c \
 	inquiry.c \
+	dev.c \
 
 OBJS = $(SRCS:%.c=%.o)
 INCS = mylib.h

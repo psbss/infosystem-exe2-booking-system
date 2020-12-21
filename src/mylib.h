@@ -22,4 +22,7 @@ int get_rand(time_t current_time, double rand_start, double rand_end);
 // lib
 void database_init(int db_type, int db_no, int database[db_type][db_no]);
 
+// dev
+void database_printf(int db_type, int db_no, int database[db_type][db_no]);
+
 #endif
