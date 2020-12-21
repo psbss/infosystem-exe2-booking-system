@@ -19,11 +19,9 @@ RM = rm
 
 $(LIB_NAME): $(OBJS)
 	$(AR) $(LIB_NAME) $(OBJS)
+	${CC} ${MAIN} ${LIB_NAME} -o ${EXE_NAME}
 
 all: $(LIB_NAME)
-
-link: all
-	${CC} ${MAIN} ${LIB_NAME} -o ${EXE_NAME}
 
 clean:
 	rm -f $(OBJS)
@@ -33,4 +31,4 @@ fclean:	clean
 
 re: fclean all
 
-.PHONY: link all clean fclean re
+.PHONY: all clean fclean re
