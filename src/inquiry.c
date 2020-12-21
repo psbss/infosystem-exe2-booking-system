@@ -77,10 +77,10 @@ void	random_inquiry(int db_type, int db_no, int database[db_type][db_no]){
 
 	// get_rand(rand_start, rand_end)
 	// rand_start < rand_end
-	while (ct_type <= db_type)
+	while (ct_type < db_type)
 	{
 		ct_no = 0;
-		while (ct_no <= db_no)
+		while (ct_no < db_no)
 		{
 			database[1][ct_no] = get_rand(current_time, 1.0, 5.0);
 			// issue_part : 診察希望部位
