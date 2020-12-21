@@ -20,9 +20,9 @@ void random_inquiry(int db_type, int db_no, int database[db_type][db_no]);
 int get_rand(time_t current_time, double rand_start, double rand_end);
 
 // lib
-void database_init(int db_type, int db_no, int database[db_type][db_no]);
+void database_init(int db_no, int db_type, int database[db_no][db_type]);
 
 // dev
-void database_printf(int db_type, int db_no, int database[db_type][db_no]);
+void database_printf(int db_no, int db_type, int database[db_no][db_type]);
 
 #endif

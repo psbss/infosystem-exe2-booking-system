@@ -66,7 +66,7 @@ void	print_validation_err(int input)
 	printf("\n%d は対象外の数値です。再度入力してください。\n", input);
 }
 
-void	random_inquiry(int db_type, int db_no, int database[db_type][db_no]){
+void	random_inquiry(int db_no, int db_type, int database[db_no][db_type]){
 	time_t current_time = time(NULL);
 	struct tm Time;
 	localtime_r(&current_time, &Time);
@@ -77,16 +77,17 @@ void	random_inquiry(int db_type, int db_no, int database[db_type][db_no]){
 
 	// get_rand(rand_start, rand_end)
 	// rand_start < rand_end
-	while (ct_type < db_type)
+	while (ct_type < db_no)
 	{
 		ct_no = 0;
-		while (ct_no < db_no)
+		while (ct_no < db_type)
 		{
-			database[1][ct_no] = get_rand(current_time, 1.0, 5.0);
+			database[ct_no][0] = (ct_type * 10) + ct_no;
+			database[ct_no][1] = get_rand(current_time, 1.0, 5.0);
 			// issue_part : 診察希望部位
-			database[2][ct_no] = current_time_int + get_rand(current_time, 1.0, 7.0);
+			database[ct_no][2] = current_time_int + get_rand(current_time, 1.0, 7.0);
 			// date : 希望時間
-			database[3][ct_no] = get_rand(current_time, 1.0, 2.0);
+			database[ct_no][3] = get_rand(current_time, 1.0, 2.0);
 			// ampm : 希望時間帯
 			ct_no++;
 		}
