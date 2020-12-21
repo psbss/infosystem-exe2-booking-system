@@ -14,5 +14,6 @@ int validate_date(int range_end, int input);
 void print_validation_err(int input);
 int random_inquiry(void);
 int get_rand(time_t current_time, double rand_start, double rand_end);
+void johnson(int* no, int* time1, int* time2,int* johnson, int* sumtime);
 
 #endif
