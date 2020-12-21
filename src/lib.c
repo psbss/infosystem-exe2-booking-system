@@ -1,6 +1,14 @@
 #include "mylib.h"
 
 void database_init(int db_type, int db_no, int database[db_type][db_no]){
+	// database : 
+	//  - 患者No
+	//  - issue_part
+	//  - date
+	//  - ampm
+	//  - 診察時間
+	//  - 施術時間
+
 	int ct_type = 0;
 	int ct_no = 0;
 
@@ -15,11 +23,3 @@ void database_init(int db_type, int db_no, int database[db_type][db_no]){
 		ct_type++;
 	}
 }
-
-// database : 
-//  - 患者No
-//  - issue_part
-//  - date
-//  - ampm
-//  - 診察時間
-//  - 施術時間
