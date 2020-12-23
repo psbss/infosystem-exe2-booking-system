@@ -1,5 +1,5 @@
 # Booking_system
-> 遺伝的アルゴリズム(GA)を利用した予約システム
+> ジョンソン法を利用した予約システム
 
 ## Get Started
 ```
@@ -10,7 +10,7 @@ cd infosystem-exe2-booking-system
 - Build
 ```
 cd src/
-make all
+make
 ```
 
 - Clean .o file
@@ -18,7 +18,7 @@ make all
 make clean
 ```
 
-- Clean .a .o file
+- Clean .a / .o / exe file
 ```
 make fclean
 ```
@@ -33,5 +33,31 @@ make re
 メイン利用言語  
 プログラム/アルゴリズムの作成に使用
   
-- pu  
+- pu言語
 UML作成に利用
+
+## Directory tree
+```
+.
+├── README.md
+├── src
+│   ├── Makefile
+│   ├── dev.c
+│   ├── inquiry.c
+│   ├── johnson_algorithm.c
+│   ├── lib.c
+│   ├── main.c
+│   └── mylib.h
+└── uml
+    ├── dist
+    │   ├── activity
+    │   │   └── activity.png
+    │   ├── flowchart
+    │   │   └── flowchart.png
+    │   └── usecase
+    │       └── usecase.png
+    └── src
+        ├── activity.pu
+        ├── flowchart.pu
+        └── usecase.pu
+```
