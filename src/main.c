@@ -3,9 +3,9 @@
 int main(int argc, char *argv[]){
 	printf("program started \n");
 	int database[DATABASE_NUMBER][DATABASE_TYPE];
-	database_init(DATABASE_NUMBER, DATABASE_TYPE, database);
+	array_init(DATABASE_NUMBER, DATABASE_TYPE, database);
 
-	printf("database_init finished! \n");
+	printf("array_init finished! \n");
 
 	if (argc == 2 && !strcmp(argv[1], "-r")){
 		random_inquiry(DATABASE_NUMBER, DATABASE_TYPE, database);
