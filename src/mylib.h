@@ -24,6 +24,7 @@ void johnson(int database[][6], int start, int count, int *johnson, int *sumtime
 
 // lib
 void array_init(int db_no, int db_type, int arr[db_no][db_type]);
+void swap_int(int *x, int *y);
 
 // dev
 void database_printf(int db_no, int db_type, int arr[db_no][db_type]);

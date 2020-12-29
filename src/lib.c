@@ -24,3 +24,12 @@ int	get_rand(int rand_start, int rand_end){
 
 	return (random);
 }
+
+void swap_int(int *x, int *y)
+{
+	int temp;
+
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
