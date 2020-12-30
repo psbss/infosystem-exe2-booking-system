@@ -1,5 +1,7 @@
 #include "mylib.h"
 
+// 配列の中身を表示する
+// db_no:行数, db_type:列数, arr:Array
 void database_printf(int db_no, int db_type, int arr[db_no][db_type]){
 	// Show database
 	int ct_type = 0;

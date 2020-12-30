@@ -19,17 +19,14 @@ void print_validation_err(int input);
 void random_inquiry(int db_type, int db_no, int database[db_type][db_no]);
 int get_rand(int rand_start, int rand_end);
 
-// johnson
 void johnson(int database[][6], int start, int count, int *johnson, int *sumtime);
 
-// lib
 void double_array_init(int db_no, int db_type, int arr[db_no][db_type]);
 void swap_int(int *x, int *y);
 void swap_arr_int(int types, int _x, int _y, int x[][types], int y[][types]);
 int partition(int arr[], int lower, int bigger);
 void quick_sort(int arr[], int lower, int bigger);
 
-// dev
 void database_printf(int db_no, int db_type, int arr[db_no][db_type]);
 
 #endif
