@@ -87,7 +87,7 @@ void quick_sort(int arr[], int lower, int bigger){
 }
 
 // quick_sort_double_arr のパーティションを選定する
-// 
+// types:列数, _type:入れ替える列, lower:最小値, bigger:最大値, arr:Array
 int partition_double_arr(int types, int _type, int lower, int bigger, int arr[][types]){
 	int pivot = arr[bigger][_type];
 	int i = (lower - 1);
@@ -107,6 +107,7 @@ int partition_double_arr(int types, int _type, int lower, int bigger, int arr[][
 }
 
 // 二次元配列 列用クイックソート
+// types:列数, _type:入れ替える列, lower:最小値, bigger:最大値, arr:Array
 void quick_sort_double_arr(int types, int _type, int lower, int bigger, int arr[][types]){
 	int pivot = 0;
 
