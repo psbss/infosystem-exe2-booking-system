@@ -14,6 +14,7 @@ int main(int argc, char *argv[]){
 		inquiry();
 		printf("inquiry finished! \n");
 	}
+	quick_sort_double_arr(6, 2, 0, DATABASE_NUMBER,  database);
 	database_printf(DATABASE_NUMBER, DATABASE_TYPE, database);
 	return (0);
 }
