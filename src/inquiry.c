@@ -80,12 +80,12 @@ void	random_inquiry(int db_no, int db_type, int database[db_no][db_type]){
 	while (ct_no < db_no)
 	{
 		database[ct_no][0] = (ct_no * 10) + ct_no;
-		database[ct_no][1] = get_rand(1, 5);
 		// issue_part : 診察希望部位
-		database[ct_no][2] = current_time_int + get_rand(1, 7);
+		database[ct_no][1] = get_rand(1, 5);
 		// date : 希望時間
-		database[ct_no][3] = get_rand(1, 2);
+		database[ct_no][2] = current_time_int + get_rand(1, 4);
 		// ampm : 希望時間帯
+		database[ct_no][3] = get_rand(1, 2);
 		ct_no++;
 	}
 }
