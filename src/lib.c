@@ -1,6 +1,6 @@
 #include "mylib.h"
 
-void array_init(int db_no, int db_type, int arr[db_no][db_type]){
+void double_array_init(int db_no, int db_type, int arr[db_no][db_type]){
 	
 	int ct_type = 0;
 	int ct_no = 0;
@@ -25,11 +25,24 @@ int	get_rand(int rand_start, int rand_end){
 	return (random);
 }
 
-void swap_int(int *x, int *y)
-{
-	int temp;
+void swap_int(int *x, int *y){
+	int temp = 0;
 
 	temp = *x;
 	*x = *y;
 	*y = temp;
+}
+
+// types:要素数, _X:入れ替える列番号, _y:入れ替える列番号, x/y:Array
+void swap_arr_int(int types, int _x, int _y, int x[][types], int y[][types]){
+	int temp_arr[types];
+	int ct = 0;
+
+	while (ct < types)
+	{
+		temp_arr[ct] = x[_x][ct];
+		x[_x][ct] = y[_y][ct];
+		y[_y][ct] = temp_arr[ct];
+		ct++;
+	}
 }

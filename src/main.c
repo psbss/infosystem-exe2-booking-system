@@ -3,7 +3,7 @@
 int main(int argc, char *argv[]){
 	printf("program started \n");
 	int database[DATABASE_NUMBER][DATABASE_TYPE];
-	array_init(DATABASE_NUMBER, DATABASE_TYPE, database);
+	double_array_init(DATABASE_NUMBER, DATABASE_TYPE, database);
 
 	printf("array_init finished! \n");
 
