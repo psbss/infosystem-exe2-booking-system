@@ -85,3 +85,8 @@ void quick_sort(int arr[], int lower, int bigger){
 		quick_sort(arr, pivot + 1, bigger);
 	}
 }
+
+// 二次元配列 列用クイックソート
+void quick_sort_double_arr(int types, int lower, int bigger, int arr[][types]){
+	
+}

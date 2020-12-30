@@ -26,6 +26,7 @@ void swap_int(int *x, int *y);
 void swap_arr_int(int types, int _x, int _y, int x[][types], int y[][types]);
 int partition(int arr[], int lower, int bigger);
 void quick_sort(int arr[], int lower, int bigger);
+void quick_sort_double_arr(int types, int lower, int bigger, int arr[][types]);
 
 void database_printf(int db_no, int db_type, int arr[db_no][db_type]);
 
