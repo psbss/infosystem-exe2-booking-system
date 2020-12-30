@@ -46,3 +46,32 @@ void swap_arr_int(int types, int _x, int _y, int x[][types], int y[][types]){
 		ct++;
 	}
 }
+
+int partition(int arr[], int lower, int bigger){
+	int pivot = arr[bigger];
+	int i = lower - 1;
+	int j = lower;
+
+	while (j <= bigger - 1)
+	{
+		if (arr[j] <= pivot)
+		{
+			i++;
+			swap_int(&arr[i], &arr[j]);
+		}
+		j++;
+	}
+	swap_int(&arr[i + 1], &arr[bigger]);
+	return (i + 1);
+}
+
+void quick_sort(int arr[], int lower, int bigger){
+	int pivot = 0;
+
+	if (lower < bigger)
+	{
+		pivot = partition(arr, lower, bigger);
+		quick_sort(arr, lower, pivot - 1);
+		quick_sort(arr, pivot + 1, bigger);
+	}
+}
