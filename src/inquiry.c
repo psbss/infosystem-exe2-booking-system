@@ -67,12 +67,9 @@ void	print_validation_err(int input)
 }
 
 void	random_inquiry(int db_no, int db_type, int database[db_no][db_type]){
-	time_t current_time = time(NULL);
-	struct tm Time;
-	localtime_r(&current_time, &Time);
 	srand((unsigned int)time(NULL));
 
-	int current_time_int = (Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday);
+	int current_time_int = get_time_now();
 	int ct_no = 0;
 
 	// get_rand(rand_start, rand_end)
@@ -80,12 +77,12 @@ void	random_inquiry(int db_no, int db_type, int database[db_no][db_type]){
 	while (ct_no < db_no)
 	{
 		database[ct_no][0] = (ct_no * 10) + ct_no;
-		database[ct_no][1] = get_rand(1, 5);
 		// issue_part : 診察希望部位
-		database[ct_no][2] = current_time_int + get_rand(1, 7);
+		database[ct_no][1] = get_rand(1, 5);
 		// date : 希望時間
-		database[ct_no][3] = get_rand(1, 2);
+		database[ct_no][2] = current_time_int + get_rand(1, 4);
 		// ampm : 希望時間帯
+		database[ct_no][3] = get_rand(1, 2);
 		ct_no++;
 	}
 }
