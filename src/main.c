@@ -31,6 +31,9 @@ int main(int argc, char *argv[]){
 		printf("inquiry finished! \n");
 	}
 	quick_sort_double_arr(6, 2, 0, DATABASE_NUMBER,  database);
-	database_printf(DATABASE_NUMBER, DATABASE_TYPE, database);
+	separate_arr(DATABASE_TYPE, 2, database, db_mon_am, db_mon_pm, db_tue_am, db_tue_pm, db_thu_am, db_thu_pm, db_sat_am, db_sat_pm);
+	database_printf(DATABASE_BLOCK_NUMBER, DATABASE_TYPE, database);
+	database_printf(DATABASE_BLOCK_NUMBER, DATABASE_TYPE, db_mon_am);
+	
 	return (0);
 }

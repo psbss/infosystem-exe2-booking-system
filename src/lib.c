@@ -75,7 +75,7 @@ void separate_arr(int types, int _type, int db[][types], int db_mon_am[][types],
 	int ct = 0;
 	int ct_am = 0;
 	int ct_pm = 0;
-	int today = 20201232;
+	int today = get_time_now();
 
 	while (ct < DATABASE_NUMBER)
 	{
@@ -201,4 +201,11 @@ void quick_sort_double_arr(int types, int _type, int lower, int bigger, int arr[
 		quick_sort_double_arr(types, _type, lower, (pivot - 1), arr);
 		quick_sort_double_arr(types, _type, (pivot + 1), bigger, arr);
 	}
+}
+
+int get_time_now(void){
+	time_t current_time = time(NULL);
+	struct tm Time;
+	localtime_r(&current_time, &Time);
+	return ((Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday));
 }
