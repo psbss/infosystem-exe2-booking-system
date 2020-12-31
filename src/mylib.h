@@ -24,6 +24,7 @@ void johnson(int database[][6], int start, int count, int *johnson, int *sumtime
 
 void double_array_init(int db_no, int db_type, int arr[db_no][db_type]);
 int len_arr(int types, int arr[][types]);
+int get_time_now(void);
 void insert_arr(int types, int new_arr_row, int old_arr_row, int arr[][types], int arr_new[][types]);
 void separate_arr(int types, int _type, int db[][types], int db_mon_am[][types], int db_mon_pm[][types], int db_tue_am[][types], int db_tue_pm[][types], int db_thu_am[][types], int db_thu_pm[][types], int db_sat_am[][types], int db_sat_pm[][types]);
 void swap_int(int *x, int *y);

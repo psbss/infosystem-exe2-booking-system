@@ -73,64 +73,68 @@ void swap_arr_int(int types, int _x, int _y, int x[][types], int y[][types]){
 
 void separate_arr(int types, int _type, int db[][types], int db_mon_am[][types], int db_mon_pm[][types], int db_tue_am[][types], int db_tue_pm[][types], int db_thu_am[][types], int db_thu_pm[][types], int db_sat_am[][types], int db_sat_pm[][types]){
 	int ct = 0;
-	int ct_am = 0;
-	int ct_pm = 0;
-	int today = 20201232;
-
+	int ct_mon_am = 0;
+	int ct_mon_pm = 0;
+	int ct_tue_am = 0;
+	int ct_tue_pm = 0;
+	int ct_thu_am = 0;
+	int ct_thu_pm = 0;
+	int ct_sat_am = 0;
+	int ct_sat_pm = 0;
+	int today = get_time_now();
+	printf("%d---\n", today);
 	while (ct < DATABASE_NUMBER)
 	{
-		ct_am = 0;
-		ct_pm = 0;
-		if (db[ct][_type] == today)
+		if (db[ct][_type] == today + 1)
 		{
 			if (db[ct][_type + 1] == 1)
 			{
-				insert_arr(types, ct_am, ct, db, db_mon_am);
-				ct_am++;
+				insert_arr(types, ct_mon_am, ct, db, db_mon_am);
+				ct_mon_am++;
 			}
 			else
 			{
-				insert_arr(types, ct_pm, ct, db, db_mon_pm);
-				ct_pm++;
-			}
-		}
-		else if (db[ct][_type] == today + 1)
-		{
-			if (db[ct][_type + 1] == 1)
-			{
-				insert_arr(types, ct_am, ct, db, db_tue_am);
-				ct_am++;
-			}
-			else
-			{
-				insert_arr(types, ct_pm, ct, db, db_tue_pm);
-				ct_pm++;
+				insert_arr(types, ct_mon_pm, ct, db, db_mon_pm);
+				ct_mon_pm++;
 			}
 		}
 		else if (db[ct][_type] == today + 2)
 		{
 			if (db[ct][_type + 1] == 1)
 			{
-				insert_arr(types, ct_am, ct, db, db_thu_am);
-				ct_am++;
+				insert_arr(types, ct_tue_am, ct, db, db_tue_am);
+				ct_tue_am++;
 			}
 			else
 			{
-				insert_arr(types, ct_pm, ct, db, db_thu_pm);
-				ct_pm++;
+				insert_arr(types, ct_tue_pm, ct, db, db_tue_pm);
+				ct_tue_pm++;
 			}
 		}
 		else if (db[ct][_type] == today + 3)
 		{
 			if (db[ct][_type + 1] == 1)
 			{
-				insert_arr(types, ct_am, ct, db, db_sat_am);
-				ct_am++;
+				insert_arr(types, ct_thu_am, ct, db, db_thu_am);
+				ct_thu_am++;
 			}
 			else
 			{
-				insert_arr(types, ct_pm, ct, db, db_sat_pm);
-				ct_pm++;
+				insert_arr(types, ct_thu_pm, ct, db, db_thu_pm);
+				ct_thu_pm++;
+			}
+		}
+		else if (db[ct][_type] == today + 4)
+		{
+			if (db[ct][_type + 1] == 1)
+			{
+				insert_arr(types, ct_sat_am, ct, db, db_sat_am);
+				ct_sat_am++;
+			}
+			else
+			{
+				insert_arr(types, ct_sat_pm, ct, db, db_sat_pm);
+				ct_sat_pm++;
 			}
 		}
 		ct++;
@@ -201,4 +205,11 @@ void quick_sort_double_arr(int types, int _type, int lower, int bigger, int arr[
 		quick_sort_double_arr(types, _type, lower, (pivot - 1), arr);
 		quick_sort_double_arr(types, _type, (pivot + 1), bigger, arr);
 	}
+}
+
+int get_time_now(void){
+	time_t current_time = time(NULL);
+	struct tm Time;
+	localtime_r(&current_time, &Time);
+	return ((Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday));
 }

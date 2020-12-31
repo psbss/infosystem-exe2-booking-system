@@ -67,12 +67,9 @@ void	print_validation_err(int input)
 }
 
 void	random_inquiry(int db_no, int db_type, int database[db_no][db_type]){
-	time_t current_time = time(NULL);
-	struct tm Time;
-	localtime_r(&current_time, &Time);
 	srand((unsigned int)time(NULL));
 
-	int current_time_int = (Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday);
+	int current_time_int = get_time_now();
 	int ct_no = 0;
 
 	// get_rand(rand_start, rand_end)
