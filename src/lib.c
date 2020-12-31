@@ -135,7 +135,6 @@ void separate_arr(int types, int _type, int db[][types], int db_mon_am[][types],
 		}
 		ct++;
 	}
-	return _type;
 }
 
 // quick_sort のパーティションを選定する
