@@ -31,3 +31,11 @@ int	get_rand(int rand_start, int rand_end){
 
 	return (random);
 }
+
+int len_arr(int types, int arr[][types]){
+	int ct = 0;
+	while (arr[ct][0] != '\0'){
+		ct++;
+	}
+	return ct;
+}
