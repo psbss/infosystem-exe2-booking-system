@@ -1,6 +1,8 @@
 #include "mylib.h"
 
-void database_printf(int db_no, int db_type, int database[db_no][db_type]){
+// 配列の中身を表示する
+// db_no:行数, db_type:列数, arr:Array
+void database_printf(int db_no, int db_type, int arr[db_no][db_type]){
 	// Show database
 	// database : 
 	//  - 患者No
@@ -37,7 +39,7 @@ void database_printf(int db_no, int db_type, int database[db_no][db_type]){
 		printf("%d: ", ct);
 		while (ct_type < db_type)
 		{
-			printf("%d ", database[ct_no][ct_type]);
+			printf("%d ", arr[ct_no][ct_type]);
 			ct_type++;
 		}
 		putchar('\n');
