@@ -66,3 +66,41 @@ int partition_double_arr(int types, int _type, int lower, int bigger, int arr[][
 	return (i + 1);
 }
 
+// バブルソート
+// types:列数, arr:Array
+void bobble_sort(int types, int arr[]){
+	int ct_l = 0;
+	int ct_r = 0;
+	
+	while(ct_l < types)
+	{
+		ct_r = types - 1;
+		while (ct_r >=  + 1)
+		{
+			if (arr[ct_r] < arr[ct_r - 1])
+				swap_int(&arr[ct_r], &arr[ct_r - 1]);
+			ct_r--;
+		}
+		ct_l++;
+	}
+}
+
+// 二次元配列 列用バブルソート
+// types:列数, _type:入れ替える列, arr:Array
+void bobble_sort_double_arr(int types, int _type, int arr[][types])
+{
+	int ct_l = 0;
+	int ct_r = 0;
+	
+	while(ct_l < types)
+	{
+		ct_r = types - 1;
+		while (ct_r >=  + 1)
+		{
+			if (arr[ct_r][_type] < arr[ct_r - 1][_type])
+				swap_arr_int(types, ct_r, ct_r - 1, arr, arr);
+			ct_r--;
+		}
+		ct_l++;
+	}
+}
