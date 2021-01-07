@@ -87,8 +87,7 @@ void bobble_sort(int types, int arr[]){
 
 // 二次元配列 列用バブルソート
 // types:列数, _type:入れ替える列, arr:Array
-void bobble_sort_double_arr(int types, int _type, int arr[][types])
-{
+void bobble_sort_double_arr(int types, int _type, int arr[][types]){
 	int ct_l = 0;
 	int ct_r = 0;
 	
