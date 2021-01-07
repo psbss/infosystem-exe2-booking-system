@@ -1,0 +1,5 @@
+# github でファイルの言語を正しく認識するようにするファイル
+*.c linguist-language=C
+*.h linguist-language=C
+Makefile linguist-language=Makefile
+*.pu linguist-language=PlantUML
