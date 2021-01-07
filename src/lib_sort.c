@@ -68,7 +68,7 @@ int partition_double_arr(int types, int _type, int lower, int bigger, int arr[][
 
 // バブルソート
 // types:列数, arr:Array
-void bobble_sort(int types, int arr[]){
+void bubble_sort(int types, int arr[]){
 	int ct_i = 0;
 	int ct_j = 0;
 	
@@ -87,7 +87,7 @@ void bobble_sort(int types, int arr[]){
 
 // 二次元配列 列用バブルソート
 // types:列数, _type:入れ替える列, no:行数, arr:Array
-void bobble_sort_double_arr(int types, int _type, int no, int arr[][types]){
+void bubble_sort_double_arr(int types, int _type, int no, int arr[][types]){
 	int ct_i = 0;
 	int ct_j = 0;
 	
