@@ -48,8 +48,14 @@ void print_double_arr(int arr_no, int arr_type, int arr[arr_no][arr_type]){
 	}
 }
 
-void print_arr(int type, int arr[][type]){
+void print_arr(int type, int arr[]){
+	int ct = 0;
 
+	while (ct < type)
+	{
+		printf("%d:%d\n", ct, arr[ct]);
+		ct++;
+	}
 }
 
 void newline(int n){
