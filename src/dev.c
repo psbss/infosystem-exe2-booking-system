@@ -58,7 +58,7 @@ void print_arr(int type, int arr[]){
 	}
 }
 
-void newline(int n){
+void print_newline(int n){
 	while(n--)
 		printf("\n");
 }
