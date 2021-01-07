@@ -37,5 +37,6 @@ void bubble_sort(int types, int arr[]);
 void bubble_sort_double_arr(int types, int _type, int no, int arr[][types]);
 
 void database_printf(int db_no, int db_type, int arr[db_no][db_type]);
+void newline(int n);
 
 #endif

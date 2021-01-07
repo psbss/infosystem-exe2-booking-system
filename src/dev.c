@@ -47,3 +47,8 @@ void database_printf(int db_no, int db_type, int arr[db_no][db_type]){
 		ct++;
 	}
 }
+
+void newline(int n){
+	while(n--)
+		printf("\n");
+}
