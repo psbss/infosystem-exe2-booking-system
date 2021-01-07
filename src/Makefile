@@ -1,5 +1,6 @@
 SRCS = \
 	lib.c \
+	lib_sort.c \
 	inquiry.c \
 	dev.c \
 	johnson_algorithm.c \
