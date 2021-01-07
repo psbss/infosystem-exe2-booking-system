@@ -69,37 +69,37 @@ int partition_double_arr(int types, int _type, int lower, int bigger, int arr[][
 // バブルソート
 // types:列数, arr:Array
 void bobble_sort(int types, int arr[]){
-	int ct_l = 0;
-	int ct_r = 0;
+	int ct_i = 0;
+	int ct_j = 0;
 	
-	while(ct_l < types)
+	while(ct_i < types - 1)
 	{
-		ct_r = types - 1;
-		while (ct_r >=  + 1)
+		ct_j = types - 1;
+		while (ct_j >= ct_i + 1)
 		{
-			if (arr[ct_r] < arr[ct_r - 1])
-				swap_int(&arr[ct_r], &arr[ct_r - 1]);
-			ct_r--;
+			if (arr[ct_j] < arr[ct_j - 1])
+				swap_int(&arr[ct_j], &arr[ct_j - 1]);
+			ct_j--;
 		}
-		ct_l++;
+		ct_i++;
 	}
 }
 
 // 二次元配列 列用バブルソート
-// types:列数, _type:入れ替える列, arr:Array
-void bobble_sort_double_arr(int types, int _type, int arr[][types]){
-	int ct_l = 0;
-	int ct_r = 0;
+// types:列数, _type:入れ替える列, no:行数, arr:Array
+void bobble_sort_double_arr(int types, int _type, int no, int arr[][types]){
+	int ct_i = 0;
+	int ct_j = 0;
 	
-	while(ct_l < types)
+	while(ct_i < no - 1)
 	{
-		ct_r = types - 1;
-		while (ct_r >=  + 1)
+		ct_j = no - 1;
+		while (ct_j >= ct_i + 1)
 		{
-			if (arr[ct_r][_type] < arr[ct_r - 1][_type])
-				swap_arr_int(types, ct_r, ct_r - 1, arr, arr);
-			ct_r--;
+			if (arr[ct_j][_type] < arr[ct_j - 1][_type])
+				swap_arr_int(types, ct_j, ct_j - 1, arr, arr);
+			ct_j--;
 		}
-		ct_l++;
+		ct_i++;
 	}
 }
