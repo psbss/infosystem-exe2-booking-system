@@ -12,6 +12,7 @@
 #define DATABASE_TYPE 6			 // database で格納するデータの種類
 #define DATABASE_NUMBER 32		 // database で格納するデータの件数
 #define DATABASE_BLOCK_NUMBER 11 // ブロック内で保持するデータ件数
+#define DATABASE_BLOCK_TYPE 7	 // ブロック内で保持するデータの種類
 
 int inquiry(void);
 int validate_int(int input_range_beginning, int input_range_end, int input);
@@ -26,7 +27,7 @@ void double_array_init(int db_no, int db_type, int arr[db_no][db_type]);
 int len_arr(int types, int arr[][types]);
 int get_time_now(void);
 void insert_arr(int types, int new_arr_row, int old_arr_row, int arr[][types], int arr_new[][types]);
-void separate_arr(int types, int _type, int db[][types], int db_mon_am[][types], int db_mon_pm[][types], int db_tue_am[][types], int db_tue_pm[][types], int db_thu_am[][types], int db_thu_pm[][types], int db_sat_am[][types], int db_sat_pm[][types]);
+void separate_arr(int types, int block_typs, int _type, int db[][types], int db_mon_am[][types], int db_mon_pm[][types], int db_tue_am[][types], int db_tue_pm[][types], int db_thu_am[][types], int db_thu_pm[][types], int db_sat_am[][types], int db_sat_pm[][types]);
 void swap_int(int *x, int *y);
 void swap_arr_int(int types, int _x, int _y, int x[][types], int y[][types]);
 int partition(int arr[], int lower, int bigger);
