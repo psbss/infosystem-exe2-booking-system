@@ -53,5 +53,26 @@ int main(int argc, char *argv[]){
 	db_sat_am_no = arr_len(DATABASE_TYPE, db_sat_am);
 	db_sat_pm_no = arr_len(DATABASE_TYPE, db_sat_pm);
 
+	int sum[8];
+	int arr[DATABASE_BLOCK_NUMBER];
+	int arr2[DATABASE_BLOCK_NUMBER];
+	array_init(8, sum);
+	array_init(DATABASE_BLOCK_NUMBER, arr);	
+	array_init(DATABASE_BLOCK_NUMBER, arr2);
+
+	for (int i = 0; i < db_mon_am_no; i++)
+	{
+		arr[i] = db_mon_am[i][0];
+		db_mon_am[i][0] = i;
+		arr2[i] = i;
+	}
+
+	johnson(db_mon_am, 0, db_mon_am_no, arr2, sum);
+
+	for (int i = 0; i < db_mon_am_no; i++)
+	{
+		printf("%d -> ", arr2[i]);
+ 	}
+
 	return (0);
 }
