@@ -147,3 +147,11 @@ int get_time_now(void){
 	localtime_r(&current_time, &Time);
 	return ((Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday));
 }
+
+int arr_len(int type, int arr[][type]){
+	int ct = 0;
+
+	while(arr[ct][0] != 0)
+		ct++;
+	return (ct);
+}

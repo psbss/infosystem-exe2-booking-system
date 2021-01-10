@@ -35,6 +35,7 @@ int partition_double_arr(int types, int _type, int lower, int bigger, int arr[][
 void quick_sort_double_arr(int types, int _type, int lower, int bigger, int arr[][types]);
 void bubble_sort(int types, int arr[]);
 void bubble_sort_double_arr(int types, int _type, int no, int arr[][types]);
+int arr_len(int type, int arr[][type]);
 
 void print_double_arr(int arr_no, int arr_type, int arr[arr_no][arr_type]);
 void print_arr(int type, int arr[]);
