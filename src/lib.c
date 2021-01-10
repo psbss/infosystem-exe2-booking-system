@@ -189,3 +189,14 @@ void add_exeopetime(int types, int _type, int _exe, int _ope, int no, int arr[][
 		ct++;
 	}
 }
+
+void print_result(int no, int arr[]){
+	int ct = 0;
+	while (ct < no)
+	{
+		if (ct != 0)
+			printf(" -> ");
+		printf("%d", arr[ct]);
+		ct++;
+	}
+}
