@@ -199,4 +199,5 @@ void print_result(int no, int arr[]){
 		printf("%d", arr[ct]);
 		ct++;
 	}
+	printf("\n");
 }

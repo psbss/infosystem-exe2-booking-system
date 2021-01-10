@@ -46,6 +46,7 @@ void bubble_sort(int types, int arr[]);
 void bubble_sort_double_arr(int types, int _type, int no, int arr[][types]);
 int arr_len(int type, int arr[][type]);
 void add_exeopetime(int types, int _type, int _exe, int _ope, int no, int arr[][types]);
+void print_result(int no, int arr[]);
 
 void print_double_arr(int arr_no, int arr_type, int arr[arr_no][arr_type]);
 void print_arr(int type, int arr[]);
