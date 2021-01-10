@@ -23,6 +23,7 @@ int get_rand(int rand_start, int rand_end);
 void johnson(int database[][6], int start, int count, int *johnson, int *sumtime);
 
 void double_array_init(int db_no, int db_type, int arr[db_no][db_type]);
+void array_init(int no, int arr[no]);
 int len_arr(int types, int arr[][types]);
 int get_time_now(void);
 void insert_arr(int types, int new_arr_row, int old_arr_row, int arr[][types], int arr_new[][types]);
@@ -35,6 +36,7 @@ int partition_double_arr(int types, int _type, int lower, int bigger, int arr[][
 void quick_sort_double_arr(int types, int _type, int lower, int bigger, int arr[][types]);
 void bubble_sort(int types, int arr[]);
 void bubble_sort_double_arr(int types, int _type, int no, int arr[][types]);
+int arr_len(int type, int arr[][type]);
 
 void print_double_arr(int arr_no, int arr_type, int arr[arr_no][arr_type]);
 void print_arr(int type, int arr[]);

@@ -19,6 +19,15 @@ void double_array_init(int db_no, int db_type, int arr[db_no][db_type]){
 	}
 }
 
+void array_init(int no, int arr[no]){
+	int ct = 0;
+	while (ct < no)
+	{
+		arr[ct] = 0;
+		ct++;
+	}
+}
+
 // 乱数を返す
 // rand_start:乱数の最小値, rand_end:乱数の最大値
 int	get_rand(int rand_start, int rand_end){
@@ -146,4 +155,12 @@ int get_time_now(void){
 	struct tm Time;
 	localtime_r(&current_time, &Time);
 	return ((Time.tm_year + 1900) * 10000 + (Time.tm_mon + 1) * 100 + (Time.tm_mday));
+}
+
+int arr_len(int type, int arr[][type]){
+	int ct = 0;
+
+	while(arr[ct][0] != 0)
+		ct++;
+	return (ct);
 }
