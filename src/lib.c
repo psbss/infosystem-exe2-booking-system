@@ -201,3 +201,15 @@ void print_result(int no, int arr[]){
 	}
 	printf("\n");
 }
+
+void print_result_withid(int no, int arr[], int id[]){
+	int ct = 0;
+	while (ct < no)
+	{
+		if (ct != 0)
+			printf(" -> ");
+		printf("%d", id[arr[ct]]);
+		ct++;
+	}
+	printf("\n");
+}

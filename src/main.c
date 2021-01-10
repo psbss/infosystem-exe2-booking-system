@@ -67,7 +67,7 @@ int main(int argc, char *argv[]){
 	}
 
 	johnson(db_mon_am, 0, db_mon_am_no, arr2, result);
-	print_result(db_mon_am_no, arr2);
+	print_result_withid(db_mon_am_no, arr2, arr);
 
 	printf("program finished!");
 	return (0);
