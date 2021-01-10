@@ -8,6 +8,14 @@
 #include <math.h>
 #include <time.h>
 
+// database :
+//  0: 患者No
+//  1: issue_part
+//  2: date
+//  3: ampm
+//  4: 診察時間
+//  5: 施術時間
+
 // Define
 #define DATABASE_TYPE 6			 // database で格納するデータの種類
 #define DATABASE_NUMBER 32		 // database で格納するデータの件数
@@ -37,6 +45,7 @@ void quick_sort_double_arr(int types, int _type, int lower, int bigger, int arr[
 void bubble_sort(int types, int arr[]);
 void bubble_sort_double_arr(int types, int _type, int no, int arr[][types]);
 int arr_len(int type, int arr[][type]);
+void add_exeopetime(int types, int _type, int _exe, int _ope, int no, int arr[][types]);
 
 void print_double_arr(int arr_no, int arr_type, int arr[arr_no][arr_type]);
 void print_arr(int type, int arr[]);

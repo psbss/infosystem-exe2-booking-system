@@ -164,3 +164,28 @@ int arr_len(int type, int arr[][type]){
 		ct++;
 	return (ct);
 }
+
+// 診察・施術時間
+void add_exeopetime(int types, int _type, int _exe, int _ope, int no, int arr[][types]){
+	int ct = 0;
+	int issue_part = 0
+	while (ct < no)
+	{
+		issue_part = arr[ct][_types]
+		if(issue_part == 1)
+		{
+			arr[ct][_exe] = 5;
+			arr[ct][_ope] = 0;
+		} else if (issue_part == 2) {
+			arr[ct][_exe] = 10;
+			arr[ct][_ope] = 15;
+		} else if (issue_part == 3) {
+			arr[ct][_exe] = 10;
+			arr[ct][_ope] = 0;
+		} else if (issue_part == 4) {
+			arr[ct][_exe] = 12;
+			arr[ct][_ope] = 5;
+		}
+		ct++;
+	}
+}
