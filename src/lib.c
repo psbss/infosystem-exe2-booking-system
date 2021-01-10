@@ -171,8 +171,8 @@ void add_exeopetime(int types, int _type, int _exe, int _ope, int no, int arr[][
 	int issue_part = 0;
 	while (ct < no)
 	{
-		issue_part = arr[ct][_types]
-		if(issue_part == 1)
+		issue_part = arr[ct][_type];
+		if (issue_part == 1)
 		{
 			arr[ct][_exe] = 5;
 			arr[ct][_ope] = 0;
