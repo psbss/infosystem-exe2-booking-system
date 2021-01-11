@@ -11,14 +11,7 @@ int main(int argc, char *argv[]){
 	int db_thu_pm[DATABASE_BLOCK_NUMBER][DATABASE_TYPE];
 	int db_sat_am[DATABASE_BLOCK_NUMBER][DATABASE_TYPE];
 	int db_sat_pm[DATABASE_BLOCK_NUMBER][DATABASE_TYPE];
-	int db_mon_am_no = 0;
-	int db_mon_pm_no = 0;
-	int db_tue_am_no = 0;
-	int db_tue_pm_no = 0;
-	int db_thu_am_no = 0;
-	int db_thu_pm_no = 0;
-	int db_sat_am_no = 0;
-	int db_sat_pm_no = 0;
+	int db_block_no = 0;
 	int id[DATABASE_BLOCK_NUMBER];
 	int id_copy[DATABASE_BLOCK_NUMBER];
 	int result[DATABASE_BLOCK_NUMBER];
@@ -49,21 +42,14 @@ int main(int argc, char *argv[]){
 	bubble_sort_double_arr(DATABASE_TYPE, 2, DATABASE_NUMBER, database);
 	separate_arr(DATABASE_TYPE, 2, database, db_mon_am, db_mon_pm, db_tue_am, db_tue_pm, db_thu_am, db_thu_pm, db_sat_am, db_sat_pm);
 
-	db_mon_am_no = arr_len(DATABASE_TYPE, db_mon_am);
-	db_mon_pm_no = arr_len(DATABASE_TYPE, db_mon_pm);
-	db_tue_am_no = arr_len(DATABASE_TYPE, db_tue_am);
-	db_tue_pm_no = arr_len(DATABASE_TYPE, db_tue_pm);
-	db_thu_am_no = arr_len(DATABASE_TYPE, db_thu_am);
-	db_thu_pm_no = arr_len(DATABASE_TYPE, db_thu_pm);
-	db_sat_am_no = arr_len(DATABASE_TYPE, db_sat_am);
-	db_sat_pm_no = arr_len(DATABASE_TYPE, db_sat_pm);
+	db_block_no = arr_len(DATABASE_TYPE, db_mon_am);
 
-	arr_copy(DATABASE_TYPE, db_mon_am_no, 0, db_mon_am, id);
-	arr_double_index_init(DATABASE_TYPE, 0, db_mon_am_no, db_mon_am);
-	arr_index_init(db_mon_am_no, id_copy);
+	arr_copy(DATABASE_TYPE, db_block_no, 0, db_mon_am, id);
+	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_mon_am);
+	arr_index_init(db_block_no, id_copy);
 
-	johnson(db_mon_am, 0, db_mon_am_no, id_copy, result);
-	print_result_withid(db_mon_am_no, id_copy, id);
+	johnson(db_mon_am, 0, db_block_no, id_copy, result);
+	print_result_withid(db_block_no, id_copy, id);
 
 	printf("program finished!");
 	return (0);
