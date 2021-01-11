@@ -19,6 +19,8 @@ int main(int argc, char *argv[]){
 	int db_thu_pm_no = 0;
 	int db_sat_am_no = 0;
 	int db_sat_pm_no = 0;
+	int id[DATABASE_BLOCK_NUMBER];
+	int id_copy[DATABASE_BLOCK_NUMBER];
 	int result[DATABASE_BLOCK_NUMBER];
 	double_array_init(DATABASE_NUMBER, DATABASE_TYPE, database);
 	double_array_init(DATABASE_BLOCK_NUMBER, DATABASE_TYPE, db_mon_am);
@@ -29,6 +31,8 @@ int main(int argc, char *argv[]){
 	double_array_init(DATABASE_BLOCK_NUMBER, DATABASE_TYPE, db_thu_pm);
 	double_array_init(DATABASE_BLOCK_NUMBER, DATABASE_TYPE, db_sat_am);
 	double_array_init(DATABASE_BLOCK_NUMBER, DATABASE_TYPE, db_sat_pm);
+	array_init(DATABASE_BLOCK_NUMBER, id);
+	array_init(DATABASE_BLOCK_NUMBER, id_copy);
 	array_init(DATABASE_BLOCK_NUMBER, result);
 
 	printf("array_init finished! \n");
@@ -54,20 +58,12 @@ int main(int argc, char *argv[]){
 	db_sat_am_no = arr_len(DATABASE_TYPE, db_sat_am);
 	db_sat_pm_no = arr_len(DATABASE_TYPE, db_sat_pm);
 
-	int arr[DATABASE_BLOCK_NUMBER];
-	int arr2[DATABASE_BLOCK_NUMBER];
-	array_init(DATABASE_BLOCK_NUMBER, arr);	
-	array_init(DATABASE_BLOCK_NUMBER, arr2);
+	arr_copy(DATABASE_TYPE, db_mon_am_no, 0, db_mon_am, id);
+	arr_double_index_init(DATABASE_TYPE, 0, db_mon_am_no, db_mon_am);
+	arr_index_init(db_mon_am_no, id_copy);
 
-	for (int i = 0; i < db_mon_am_no; i++)
-	{
-		arr[i] = db_mon_am[i][0];
-		db_mon_am[i][0] = i;
-		arr2[i] = i;
-	}
-
-	johnson(db_mon_am, 0, db_mon_am_no, arr2, result);
-	print_result_withid(db_mon_am_no, arr2, arr);
+	johnson(db_mon_am, 0, db_mon_am_no, id_copy, result);
+	print_result_withid(db_mon_am_no, id_copy, id);
 
 	printf("program finished!");
 	return (0);

@@ -48,6 +48,9 @@ int arr_len(int type, int arr[][type]);
 void add_exeopetime(int types, int _type, int _exe, int _ope, int no, int arr[][types]);
 void print_result(int no, int arr[]);
 void print_result_withid(int no, int arr[], int id[]);
+void arr_index_init(int no, int arr[]);
+void arr_copy(int types, int no, int _type, int arr[][types], int dist[]);
+void arr_double_index_init(int types, int _type, int no, int arr[][types]);
 
 void print_double_arr(int arr_no, int arr_type, int arr[arr_no][arr_type]);
 void print_arr(int type, int arr[]);
