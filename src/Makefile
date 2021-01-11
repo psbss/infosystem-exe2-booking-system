@@ -1,11 +1,12 @@
 SRCS = \
+	johnson.c \
 	lib.c \
 	lib_sort.c \
 	inquiry.c \
 	dev.c \
-	johnson.c \
 
 OBJS = $(SRCS:%.c=%.o)
+SRCS_DIR = src/
 INCS = mylib.h
 MAIN = main.c
 LIB_NAME = MYLIB
@@ -18,11 +19,11 @@ RM = rm
 .c.o:
 	$(CC) $(FLAGS) -c $< -o $@ -I ${INCS}
 
+all: $(LIB_NAME)
+
 $(LIB_NAME): $(OBJS)
 	$(AR) $(LIB_NAME) $(OBJS)
 	${CC} ${MAIN} ${LIB_NAME} -o ${EXE_NAME}
-
-all: $(LIB_NAME)
 
 clean:
 	rm -f $(OBJS)
