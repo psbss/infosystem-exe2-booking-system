@@ -42,13 +42,71 @@ int main(int argc, char *argv[]){
 	bubble_sort_double_arr(DATABASE_TYPE, 2, DATABASE_NUMBER, database);
 	separate_arr(DATABASE_TYPE, 2, database, db_mon_am, db_mon_pm, db_tue_am, db_tue_pm, db_thu_am, db_thu_pm, db_sat_am, db_sat_pm);
 
-	db_block_no = arr_len(DATABASE_TYPE, db_mon_am);
+	print_double_arr(DATABASE_NUMBER, DATABASE_TYPE, database);
+	print_newline(2);
 
+	db_block_no = arr_len(DATABASE_TYPE, db_mon_am);
 	arr_copy(DATABASE_TYPE, db_block_no, 0, db_mon_am, id);
 	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_mon_am);
 	arr_index_init(db_block_no, id_copy);
-
 	johnson(db_mon_am, 0, db_block_no, id_copy, result);
+	printf("月曜日-午前: ");
+	print_result_withid(db_block_no, id_copy, id);
+
+	db_block_no = arr_len(DATABASE_TYPE, db_mon_pm);
+	arr_copy(DATABASE_TYPE, db_block_no, 0, db_mon_pm, id);
+	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_mon_pm);
+	arr_index_init(db_block_no, id_copy);
+	johnson(db_mon_pm, 0, db_block_no, id_copy, result);
+	printf("月曜日-午後: ");
+	print_result_withid(db_block_no, id_copy, id);
+
+	db_block_no = arr_len(DATABASE_TYPE, db_tue_am);
+	arr_copy(DATABASE_TYPE, db_block_no, 0, db_tue_am, id);
+	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_tue_am);
+	arr_index_init(db_block_no, id_copy);
+	johnson(db_tue_am, 0, db_block_no, id_copy, result);
+	printf("火曜日-午前: ");
+	print_result_withid(db_block_no, id_copy, id);
+
+	db_block_no = arr_len(DATABASE_TYPE, db_tue_pm);
+	arr_copy(DATABASE_TYPE, db_block_no, 0, db_tue_pm, id);
+	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_tue_pm);
+	arr_index_init(db_block_no, id_copy);
+	johnson(db_tue_pm, 0, db_block_no, id_copy, result);
+	printf("火曜日-午後: ");
+	print_result_withid(db_block_no, id_copy, id);
+
+	db_block_no = arr_len(DATABASE_TYPE, db_thu_am);
+	arr_copy(DATABASE_TYPE, db_block_no, 0, db_thu_am, id);
+	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_thu_am);
+	arr_index_init(db_block_no, id_copy);
+	johnson(db_thu_am, 0, db_block_no, id_copy, result);
+	printf("木曜日-午前: ");
+	print_result_withid(db_block_no, id_copy, id);
+
+	db_block_no = arr_len(DATABASE_TYPE, db_thu_pm);
+	arr_copy(DATABASE_TYPE, db_block_no, 0, db_thu_pm, id);
+	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_thu_pm);
+	arr_index_init(db_block_no, id_copy);
+	johnson(db_thu_pm, 0, db_block_no, id_copy, result);
+	printf("木曜日-午後: ");
+	print_result_withid(db_block_no, id_copy, id);
+
+	db_block_no = arr_len(DATABASE_TYPE, db_sat_am);
+	arr_copy(DATABASE_TYPE, db_block_no, 0, db_sat_am, id);
+	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_sat_am);
+	arr_index_init(db_block_no, id_copy);
+	johnson(db_sat_am, 0, db_block_no, id_copy, result);
+	printf("土曜日-午前: ");
+	print_result_withid(db_block_no, id_copy, id);
+
+	db_block_no = arr_len(DATABASE_TYPE, db_sat_pm);
+	arr_copy(DATABASE_TYPE, db_block_no, 0, db_sat_pm, id);
+	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_sat_pm);
+	arr_index_init(db_block_no, id_copy);
+	johnson(db_sat_pm, 0, db_block_no, id_copy, result);
+	printf("土曜日-午後: ");
 	print_result_withid(db_block_no, id_copy, id);
 
 	printf("program finished!");
