@@ -30,12 +30,12 @@ int main(int argc, char *argv[]){
 
 	printf("array_init finished! \n");
 
-	if (argc == 2 && !strcmp(argv[1], "-r")){
-		random_inquiry(DATABASE_NUMBER, DATABASE_TYPE, database);
-		printf("random_inquiry finished! \n");
-	} else {
+	if (argc == 2 && !strcmp(argv[1], "-m")){
 		inquiry();
 		printf("inquiry finished! \n");
+	} else {
+		random_inquiry(DATABASE_NUMBER, DATABASE_TYPE, database);
+		printf("random_inquiry finished! \n");
 	}
 
 	add_exeopetime(DATABASE_TYPE, 1, 4, 5, DATABASE_NUMBER, database);
