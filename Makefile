@@ -1,15 +1,9 @@
-SRCS = \
-	johnson.c \
-	lib.c \
-	lib_sort.c \
-	inquiry.c \
-	dev.c \
-
+SRCS = $(wildcard $(SRCS_DIR)*.c)
 OBJS = $(SRCS:%.c=%.o)
 SRCS_DIR = src/
 INCS = mylib.h
-MAIN = main.c
-LIB_NAME = MYLIB
+MAIN = $(SRCS_DIR)main.c
+LIB_NAME = $(SRCS_DIR)MYLIB
 EXE_NAME = ExeBooking
 CC = gcc
 AR = ar rcs
