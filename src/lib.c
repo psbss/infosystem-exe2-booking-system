@@ -189,3 +189,54 @@ void add_exeopetime(int types, int _type, int _exe, int _ope, int no, int arr[][
 		ct++;
 	}
 }
+
+void print_result(int no, int arr[]){
+	int ct = 0;
+	while (ct < no)
+	{
+		if (ct != 0)
+			printf(" -> ");
+		printf("%d", arr[ct]);
+		ct++;
+	}
+	printf("\n");
+}
+
+void print_result_withid(int no, int arr[], int id[]){
+	int ct = 0;
+	while (ct < no)
+	{
+		if (ct != 0)
+			printf(" -> ");
+		printf("%d", id[arr[ct]]);
+		ct++;
+	}
+	printf("\n");
+}
+
+void arr_index_init(int no, int arr[]){
+	int ct = 0;
+	while (ct < no)
+	{
+		arr[ct] = ct;
+		ct++;
+	}
+}
+
+void arr_double_index_init(int types, int _type, int no, int arr[][types]){
+	int ct = 0;
+	while (ct < no)
+	{
+		arr[ct][_type] = ct;
+		ct++;
+	}
+}
+
+void arr_copy(int types, int no, int _type, int arr[][types], int dist[]){
+	int ct = 0;
+	while (ct < no)
+	{
+		dist[ct] = arr[ct][_type];
+		ct++;
+	}
+}
