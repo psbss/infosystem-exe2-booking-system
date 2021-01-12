@@ -4,12 +4,11 @@
 ## Get Started
 ```
 git clone https://github.com/psbss/infosystem-exe2-booking-system
-cd infosystem-exe2-booking-system
+cd johnson-booking-system
 ```
 
 - Build
 ```
-cd src/
 make
 ```
 
@@ -39,25 +38,26 @@ UML作成に利用
 ## Directory tree
 ```
 .
+├── Makefile
 ├── README.md
-├── src
-│   ├── Makefile
-│   ├── dev.c
-│   ├── inquiry.c
-│   ├── johnson_algorithm.c
-│   ├── lib.c
-│   ├── main.c
-│   └── mylib.h
-└── uml
-    ├── dist
-    │   ├── activity
-    │   │   └── activity.png
-    │   ├── flowchart
-    │   │   └── flowchart.png
-    │   └── usecase
-    │       └── usecase.png
-    └── src
-        ├── activity.pu
-        ├── flowchart.pu
-        └── usecase.pu
+├── doc
+│   ├── uml
+│   │   ├── activity
+│   │   │   └── activity.png
+│   │   ├── activity.puml
+│   │   ├── flowchart
+│   │   │   └── flowchart.png
+│   │   ├── flowchart.puml
+│   │   ├── usecase
+│   │   │   └── usecase.png
+│   │   └── usecase.puml
+│   └── variable.md
+└── src
+    ├── dev.c
+    ├── inquiry.c
+    ├── johnson.c
+    ├── lib.c
+    ├── lib_sort.c
+    ├── main.c
+    └── mylib.h
 ```
