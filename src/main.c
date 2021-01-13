@@ -33,6 +33,8 @@ int main(int argc, char *argv[]){
 	if (argc == 2 && !strcmp(argv[1], "-m")){
 		inquiry();
 		printf("inquiry finished! \n");
+	} else if (argc == 2 && !strcmp(argv[1], "-t")) {
+		test_inquiry(DATABASE_NUMBER, DATABASE_TYPE, database);
 	} else {
 		random_inquiry(DATABASE_NUMBER, DATABASE_TYPE, database);
 		printf("random_inquiry finished! \n");

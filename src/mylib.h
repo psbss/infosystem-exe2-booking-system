@@ -66,5 +66,6 @@ int get_rand(int rand_start, int rand_end);
 void print_double_arr(int arr_no, int arr_type, int arr[arr_no][arr_type]);
 void print_arr(int type, int arr[]);
 void print_newline(int n);
+void test_inquiry(int no, int types, int db[][types]);
 
 #endif
