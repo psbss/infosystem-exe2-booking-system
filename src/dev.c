@@ -36,6 +36,8 @@ void print_double_arr(int arr_no, int arr_type, int arr[arr_no][arr_type]){
 	while (ct_no < arr_no)
 	{
 		ct_type = 0;
+		if (ct < 10)
+			printf("0");
 		printf("%d: ", ct);
 		while (ct_type < arr_type)
 		{
