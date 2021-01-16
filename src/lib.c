@@ -160,7 +160,7 @@ int get_time_now(void){
 int arr_len(int type, int arr[][type]){
 	int ct = 0;
 
-	while(arr[ct][0] != 0)
+	while(arr[ct][2] != 0)
 		ct++;
 	return (ct);
 }
