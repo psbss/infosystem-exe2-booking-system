@@ -28,6 +28,5 @@ void test_inquiry(int no, int types, int db[][types]){
 		if(ampm == 3)
 			ampm = 1;
 		date_ct--;
-		printf("datect:%d", date_ct);
 	}
 }
