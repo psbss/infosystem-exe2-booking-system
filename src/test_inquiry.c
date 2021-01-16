@@ -8,7 +8,7 @@
 //  - 診察時間
 //  - 施術時間
 void test_inquiry(int no, int types, int db[][types]){
-	int issue = 0;
+	int issue = 1;
 	int date = get_time_now() + 1;
 	int ampm = 1;
 	int date_ct = 8;
@@ -22,7 +22,7 @@ void test_inquiry(int no, int types, int db[][types]){
 		db[i][0] = i;
 		db[i][1] = issue++;
 		if(issue == 6)
-			issue = 0;
+			issue = 1;
 		db[i][2] = date;
 		db[i][3] = ampm++;
 		if(ampm == 3)
