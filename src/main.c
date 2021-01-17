@@ -1,7 +1,6 @@
 #include "mylib.h"
 
 int main(int argc, char *argv[]){
-	printf("program started \n");
 	int database[DATABASE_NUMBER][DATABASE_TYPE];
 	int db_mon_am[DATABASE_BLOCK_NUMBER][DATABASE_TYPE];
 	int db_mon_pm[DATABASE_BLOCK_NUMBER][DATABASE_TYPE];
@@ -28,16 +27,10 @@ int main(int argc, char *argv[]){
 	array_init(DATABASE_BLOCK_NUMBER, id_copy);
 	array_init(DATABASE_BLOCK_NUMBER, result);
 
-	printf("array_init finished! \n");
-
-	if (argc == 2 && !strcmp(argv[1], "-m")){
-		inquiry();
-		printf("inquiry finished! \n");
-	} else if (argc == 2 && !strcmp(argv[1], "-t")) {
+	if (argc == 2 && !strcmp(argv[1], "-t")){
 		test_inquiry(DATABASE_NUMBER, DATABASE_TYPE, database);
 	} else {
 		random_inquiry(DATABASE_NUMBER, DATABASE_TYPE, database);
-		printf("random_inquiry finished! \n");
 	}
 
 	add_exeopetime(DATABASE_TYPE, 1, 4, 5, DATABASE_NUMBER, database);
@@ -111,6 +104,5 @@ int main(int argc, char *argv[]){
 	printf("土曜日-午後: ");
 	print_result_withid(db_block_no, id_copy, id);
 
-	printf("program finished!");
 	return (0);
 }

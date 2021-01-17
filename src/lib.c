@@ -91,7 +91,7 @@ void separate_arr(int types, int _type, int db[][types], int db_mon_am[][types],
 	int ct_sat_am = 0;
 	int ct_sat_pm = 0;
 	int today = get_time_now();
-	printf("Today is %d---\n", today);
+	printf("Today is %d\n", today);
 	while (ct < DATABASE_NUMBER)
 	{
 		if (db[ct][_type] == today + 1)
