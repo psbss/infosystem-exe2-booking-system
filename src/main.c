@@ -27,7 +27,6 @@ int main(int argc, char *argv[]){
 	array_init(DATABASE_BLOCK_NUMBER, id);
 	array_init(DATABASE_BLOCK_NUMBER, id_copy);
 	array_init(DATABASE_BLOCK_NUMBER, result);
-
 	printf("array_init finished! \n");
 
 	if (argc == 2 && !strcmp(argv[1], "-m")){
