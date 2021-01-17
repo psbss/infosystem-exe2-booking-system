@@ -35,10 +35,10 @@ void johnson(int database[][6], int start, int count, int *johnson, int *sumtime
 
 // sort
 
-int partition(int arr[], int lower, int bigger);
-void quick_sort(int arr[], int lower, int bigger);
-int partition_double_arr(int types, int _type, int lower, int bigger, int arr[][types]);
-void quick_sort_double_arr(int types, int _type, int lower, int bigger, int arr[][types]);
+// int partition(int arr[], int lower, int bigger);
+// void quick_sort(int arr[], int lower, int bigger);
+// int partition_double_arr(int types, int _type, int lower, int bigger, int arr[][types]);
+// void quick_sort_double_arr(int types, int _type, int lower, int bigger, int arr[][types]);
 void shaker_sort(int types, int arr[]);
 void shaker_sort_double_arr(int types, int _type, int no, int arr[][types]);
 
