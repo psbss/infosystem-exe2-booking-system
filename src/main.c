@@ -37,9 +37,12 @@ int main(int argc, char *argv[]){
 	shaker_sort_double_arr(DATABASE_TYPE, 2, DATABASE_NUMBER, database);
 	separate_arr(DATABASE_TYPE, 2, database, db_mon_am, db_mon_pm, db_tue_am, db_tue_pm, db_thu_am, db_thu_pm, db_sat_am, db_sat_pm);
 
-	print_double_arr(DATABASE_NUMBER, DATABASE_TYPE, database);
-	print_newline(2);
+	if (argc == 2 && !strcmp(argv[1], "-t")){
+		print_double_arr(DATABASE_NUMBER, DATABASE_TYPE, database);
+		print_newline(1);
+	}
 
+	print_newline(1);
 	db_block_no = arr_len(DATABASE_TYPE, db_mon_am);
 	arr_copy(DATABASE_TYPE, db_block_no, 0, db_mon_am, id);
 	arr_double_index_init(DATABASE_TYPE, 0, db_block_no, db_mon_am);
