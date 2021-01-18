@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
 	}
 
 	add_exeopetime(DATABASE_TYPE, 1, 4, 5, DATABASE_NUMBER, database);
-	shaker_sort_double_arr(DATABASE_TYPE, 2, DATABASE_NUMBER, database);
+	sort_double_arr(DATABASE_TYPE, 2, DATABASE_NUMBER, database);
 	separate_arr(DATABASE_TYPE, 2, database, db_mon_am, db_mon_pm, db_tue_am, db_tue_pm, db_thu_am, db_thu_pm, db_sat_am, db_sat_pm);
 
 	if (argc == 2 && !strcmp(argv[1], "-t")){
